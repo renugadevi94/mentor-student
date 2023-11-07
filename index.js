@@ -149,7 +149,7 @@ const mentorSchema = new mongoose.Schema({
   
   
   
-  // 04 api endpoint for reassigning mentor to specific student
+  //  4) api endpoint for reassigning mentor to specific student
   
   
   
@@ -186,7 +186,7 @@ const mentorSchema = new mongoose.Schema({
   
   
   
-  // 05 api endpoint for showing students of a mentor
+  // 5) api endpoint for showing students of a mentor
   
   
   
@@ -207,7 +207,7 @@ const mentorSchema = new mongoose.Schema({
   
   
   
-  //06 api endpoint to show previous mentor for a particular student
+  // 6) api endpoint to show previous mentor for a particular student
   
   
   app.get("/student/:studentId/previousMentor", async (req, res) => {
