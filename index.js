@@ -23,6 +23,7 @@ const mentorSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true,
+      trim:true,
     
     },
     assignedStudents: [
@@ -38,6 +39,7 @@ const mentorSchema = new mongoose.Schema({
     name: {
       type: String,
       required: true,
+      trim:true,
       
     },
     assignedMentor: {
@@ -80,10 +82,11 @@ const mentorSchema = new mongoose.Schema({
           message: "Invalid mentor data",
         });
       }
-      newMentor = newMentor.save();
+      newMentor = await newMentor.save();
       res.status(200).json({ message: "New mentor added Successfully" });
     } catch (error) {
       console.error(error);
+      res.status(500).json({ error: "Failed to create new mentor" });
     }
   });
   
